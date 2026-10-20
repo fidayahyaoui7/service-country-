@@ -1,14 +1,21 @@
 package com.countryservice.demo;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootTest
 class CountryServiceApplicationTests {
+
+	@Autowired
+	private ApplicationContext context;
 
 	@Test
 	void contextLoads() {
-		// verifie simplement que le contexte Spring demarre
+		assertNotNull(context);
 	}
 
 }
